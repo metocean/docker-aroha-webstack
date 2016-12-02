@@ -1,6 +1,7 @@
-FROM metocean/aroha:v1.0.0
+FROM metocean/aroha:latest
 MAINTAINER Thomas Coats <thomas@metocean.co.nz>
 
 ADD . /install/
 RUN /install/install.sh
-CMD ["/sbin/initsh"]
+#CMD ["/sbin/dumb-init", "/sbin/runsvdir", "-P", "/etc/service"]
+#CMD ["/sbin/initsh"]
